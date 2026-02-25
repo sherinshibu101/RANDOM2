@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFE4EC;
+  --foreground: #2B2B2B;
+  --accent: #F4C2D7;
+  --accent-glow: #E6C17A;
+  --cabin-bg: #F4C2D7;
+  --modal-bg: rgba(255, 228, 236, 0.97);
+  --warm-taupe: #9A8C82;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-englebert);
+  --font-heading: var(--font-imperial-script);
+  --font-handwritten: var(--font-oooh-baby);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-englebert), Arial, Helvetica, sans-serif;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-imperial-script), cursive;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #F4C2D7, #E6C17A);
+  border-radius: 4px;
+}
+
+/* Handwritten font style */
+.handwritten {
+  font-family: var(--font-oooh-baby), cursive;
+  line-height: 2;
+}
+
+/* Glow effects */
+.glow {
+  filter: drop-shadow(0 0 20px var(--accent-glow));
+}
+
+.glow-text {
+  text-shadow: 0 0 30px rgba(230, 193, 122, 0.4);
+}
+
+/* Cabin hover glow */
+.cabin-glow:hover {
+  filter: drop-shadow(0 0 25px rgba(230, 193, 122, 0.6));
+  transform: scale(1.05);
+}
+
+/* Parallax background */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 246, 240, 0.3) 0%,
+    rgba(251, 246, 240, 0.7) 50%,
+    rgba(251, 246, 240, 0.95) 100%
+  );
+}
+
+/* Star animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star {
+  animation-name: twinkle;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: opacity;
+  transform: translateZ(0);
+}
