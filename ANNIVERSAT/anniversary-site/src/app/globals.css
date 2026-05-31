@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  
+  /* Cinematic Palette */
+  --cinematic-black: #050505;
+  --cinematic-gold: #cfb53b;
+  --cinematic-silver: #a0a0a0;
+  
+  --font-serif: 'Imperial Script', cursive;
+  --font-sans: 'Oooh Baby', cursive;
+}
+
+@layer base {
+  body {
+    background: var(--cinematic-black);
+    background-image: url('/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    @apply antialiased overflow-x-hidden;
+  }
+
+  h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
+  h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  h3 {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .gold-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 2rem;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .gold-button:hover {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.25rem;
+    background: #1a1a1a;
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .cinematic-fade {
+    animation: fadeIn 1.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
